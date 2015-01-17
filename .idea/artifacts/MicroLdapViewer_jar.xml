@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MicroLdapViewer:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MicroLdapViewer_jar</output-path>
+    <root id="archive" name="MicroLdapViewer.jar">
+      <element id="module-output" name="MicroLdapViewer" />
+    </root>
+  </artifact>
+</component>

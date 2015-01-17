@@ -1,1 +1,2 @@
 # MicroLdapViewer
+一个测试LDAP的小java例子，实现了对ou和user的查询。并且不受ldap单个节点只能查询1000个用户的限制。
