@@ -39,7 +39,6 @@
         <entry key="BooleanReturnNull" value="true" />
         <entry key="BuildInterproceduralCallGraph" value="false" />
         <entry key="BuildObligationPolicyDatabase" value="true" />
-        <entry key="BuildStringPassthruGraph" value="true" />
         <entry key="CallToUnsupportedMethod" value="false" />
         <entry key="CalledMethods" value="true" />
         <entry key="CheckCalls" value="false" />
@@ -84,7 +83,6 @@
         <entry key="FindMaskedFields" value="true" />
         <entry key="FindMismatchedWaitOrNotify" value="true" />
         <entry key="FindNakedNotify" value="true" />
-        <entry key="FindNoSideEffectMethods" value="true" />
         <entry key="FindNonSerializableStoreIntoSession" value="false" />
         <entry key="FindNonSerializableValuePassedToWriteObject" value="false" />
         <entry key="FindNonShortCircuit" value="true" />
@@ -118,7 +116,6 @@
         <entry key="IncompatMask" value="true" />
         <entry key="InconsistentAnnotations" value="true" />
         <entry key="InefficientIndexOf" value="true" />
-        <entry key="InefficientInitializationInsideLoop" value="true" />
         <entry key="InefficientMemberAccess" value="false" />
         <entry key="InefficientToArray" value="true" />
         <entry key="InfiniteLoop" value="true" />

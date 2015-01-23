@@ -5,26 +5,26 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Created by lumeng on 2015/1/17.
+ * Created by lumeng on 2015/1/20.
  */
-public class LdapConfig extends JFrame implements ActionListener {
+public class AdConfig  extends JFrame implements ActionListener {
 
-    private JButton btn_ok;
-    private JButton btn_cancel;
+    private JPanel rootPanel;
     private JTextField ldapUrlTxt;
-    private JTextField initDnTxt;
-    private JTextField userTxt;
-    private JTextField regexUserTxt;
-    private JPanel rootPannel;
+    private JTextField baseDnTxt;
+    private JTextField domainTxt;
+    private JTextField userNameTxt;
+    private JButton btnOk;
+    private JButton btnCancel;
     private JPasswordField pwdTxt;
 
-    public LdapConfig() {
-        btn_ok.addActionListener(this);
-        btn_cancel.addActionListener(this);
+    public AdConfig() {
+        btnOk.addActionListener(this);
+        btnCancel.addActionListener(this);
 
-        setContentPane(rootPannel);
+        setContentPane(rootPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setTitle("LDAP导入设置");
+        setTitle("AD导入设置");
         pack();
         setSize(400, 200);
         // 禁用最大最小化按钮
@@ -35,28 +35,28 @@ public class LdapConfig extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (btn_ok.equals(e.getSource())) {
+        if (btnOk.equals(e.getSource())) {
             try {
                 checkFieldNotNull(ldapUrlTxt, "URL不能为空");
-                checkFieldNotNull(initDnTxt, "入口DN不能为空");
-                checkFieldNotNull(userTxt, "用户名不能为空");
+                checkFieldNotNull(baseDnTxt, "入口DN不能为空");
+                checkFieldNotNull(domainTxt, "domain不能为空");
+                checkFieldNotNull(userNameTxt, "用户名不能为空");
                 checkFieldNotNull(pwdTxt, "密码不能为空");
-                checkFieldNotNull(regexUserTxt, "用户匹配模式不能为空");
             } catch (Exception ex) {
                 return;
             }
 
-            String url = ldapUrlTxt.getText().trim();
-            String initDn = initDnTxt.getText().trim();
-            String user = userTxt.getText().trim();
+            String ldapUrl = ldapUrlTxt.getText().trim();
+            String baseDn = baseDnTxt.getText().trim();
+            String domain = domainTxt.getText().trim();
+            String user = userNameTxt.getText().trim();
             String pwd = new String(pwdTxt.getPassword()).trim();
-            String regexUser = regexUserTxt.getText().trim();
 
             this.setVisible(false);
 
-            LdapViewer viewer = new LdapViewer(url, initDn, user, pwd, regexUser);
+            AdViewer viewer = new AdViewer(ldapUrl, baseDn, domain,user, pwd);
             viewer.setVisible(true);
-        } else if (btn_cancel.equals(e.getSource())) {
+        } else if (btnCancel.equals(e.getSource())) {
             System.out.println("Cancel clicked");
             System.exit(0);
         }
